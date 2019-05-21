@@ -11,6 +11,20 @@ class _AuthenState extends State<Authen> {
     return Image.asset('images/logo.png');
   }
 
+  Widget showSignUp() {
+    return RaisedButton(
+      child: Text('Sign Up'),
+      onPressed: () {},
+    );
+  }
+
+  Widget showSignIn() {
+    return RaisedButton(
+      child: Text('Sign In'),
+      onPressed: () {},
+    );
+  }
+
   Widget showUser() {
     return TextFormField(
       decoration: InputDecoration(labelText: 'User :', hintText: 'Your user'),
@@ -19,8 +33,8 @@ class _AuthenState extends State<Authen> {
 
   Widget showPassword() {
     return TextFormField(
-      decoration:
-          InputDecoration(labelText: 'Password :', hintText: 'More 6 parameters'),
+      decoration: InputDecoration(
+          labelText: 'Password :', hintText: 'More 6 parameters'),
     );
   }
 
@@ -52,6 +66,19 @@ class _AuthenState extends State<Authen> {
           Container(
             margin: EdgeInsets.only(left: 50.0, right: 50.0),
             child: showPassword(),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 50.0, right: 50.0),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: showSignIn(),
+                ),
+                Expanded(
+                  child: showSignUp(),
+                )
+              ],
+            ),
           )
         ],
       ),
