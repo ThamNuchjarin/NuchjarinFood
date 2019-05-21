@@ -50,7 +50,10 @@ class _AuthenState extends State<Authen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-      margin: EdgeInsets.only(top: 70.0),
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.white, Colors.pink], begin: Alignment(-1, -1))),
+      padding: EdgeInsets.only(top: 70.0),
       alignment: Alignment(0, -1),
       child: Column(
         children: <Widget>[
