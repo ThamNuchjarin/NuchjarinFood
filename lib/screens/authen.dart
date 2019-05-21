@@ -42,49 +42,51 @@ class _AuthenState extends State<Authen> {
     return Text(
       'Nuchjarin Food',
       style: TextStyle(
-          fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.pink[300]),
+          fontSize: 25.0, fontWeight: FontWeight.bold, color: Colors.blue[300]),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomPadding: false,
         body: Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Colors.white, Colors.pink], begin: Alignment(-1, -1))),
-      padding: EdgeInsets.only(top: 70.0),
-      alignment: Alignment(0, -1),
-      child: Column(
-        children: <Widget>[
-          showLogo(),
-          Container(
-            margin: EdgeInsets.only(top: 50.0),
-            child: showTitle(),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 50.0, right: 50.0),
-            child: showUser(),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 50.0, right: 50.0),
-            child: showPassword(),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 50.0, right: 50.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: showSignIn(),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Colors.white, Colors.pink],
+                  begin: Alignment(-1, -1))),
+          padding: EdgeInsets.only(top: 70.0),
+          alignment: Alignment(0, -1),
+          child: Column(
+            children: <Widget>[
+              showLogo(),
+              Container(
+                margin: EdgeInsets.only(top: 50.0),
+                child: showTitle(),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 50.0, right: 50.0),
+                child: showUser(),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 50.0, right: 50.0),
+                child: showPassword(),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 50.0, right: 50.0),
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: showSignIn(),
+                    ),
+                    Expanded(
+                      child: showSignUp(),
+                    )
+                  ],
                 ),
-                Expanded(
-                  child: showSignUp(),
-                )
-              ],
-            ),
-          )
-        ],
-      ),
-    ));
+              )
+            ],
+          ),
+        ));
   }
 }
