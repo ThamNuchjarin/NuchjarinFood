@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:nuchjarin_food/screens/register.dart';
+import 'package:http/http.dart' show get;
+import 'dart:convert';
 
 class Authen extends StatefulWidget {
   @override
@@ -21,6 +23,7 @@ class _AuthenState extends State<Authen> {
       onPressed: () {
         if (formkey.currentState.validate()) {
           formkey.currentState.save();
+          checkUserPassword();
         }
         print('You click Signup');
 
@@ -30,6 +33,14 @@ class _AuthenState extends State<Authen> {
         Navigator.of(context).push(registerRouter);
       },
     );
+  }
+
+  void checkUserPassword() async {
+    String urlPHP =
+        'https://www.androidthai.in.th/tid/addUserUng.php?getUserWhereUserMaster.php?isAdd=true'; //urlไม่ใช่ Json copy มั่วๆ
+    var response = await get(urlPHP);
+    var result = json.decode(response.body);
+    print('result ==> $result');
   }
 
   Widget showSignIn() {
