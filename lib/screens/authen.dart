@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nuchjarin_food/screens/register.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -11,10 +12,17 @@ class _AuthenState extends State<Authen> {
     return Image.asset('images/logo.png');
   }
 
-  Widget showSignUp() {
+  Widget showSignUp(BuildContext context) {
     return RaisedButton(
       child: Text('Sign Up'),
-      onPressed: () {},
+      onPressed: () {
+        print('You click Signup');
+
+        // Creat Router
+        var registerRouter =
+            MaterialPageRoute(builder: (BuildContext context) => Register());
+            Navigator.of(context).push(registerRouter);
+      },
     );
   }
 
@@ -80,7 +88,7 @@ class _AuthenState extends State<Authen> {
                       child: showSignIn(),
                     ),
                     Expanded(
-                      child: showSignUp(),
+                      child: showSignUp(context),
                     )
                   ],
                 ),
